@@ -10,7 +10,7 @@ import { IssuesService } from '../../services/issues.service';
   imports: [CommonModule],
   templateUrl: './label-selector.component.html',
   host: {
-    class: 'block overflow-x-scroll',
+    class: 'block overflow-x-auto',
   },
 })
 export default class LabelSelectorComponent {

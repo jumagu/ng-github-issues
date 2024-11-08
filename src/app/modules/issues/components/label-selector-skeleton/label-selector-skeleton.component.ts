@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './label-selector-skeleton.component.html',
   host: {
-    class: 'block overflow-x-scroll',
+    class: 'block overflow-x-auto',
   },
 })
 export class LabelSelectorSkeletonComponent {
