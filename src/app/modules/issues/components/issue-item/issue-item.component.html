@@ -1,0 +1,58 @@
+<div
+  class="flex items-center px-4 py-3 mb-5 border rounded-md hover:bg-gray-800"
+>
+  @if(isOpen) {
+  <span
+    class="fa-regular fa-folder-open text-green-500 text-xl mr-2"
+    aria-label="open issue"
+  ></span>
+  } @else {
+  <span
+    class="fa-regular fa-folder-closed text-red-500 text-xl mr-2"
+    aria-label="closed issue"
+  ></span>
+  }
+
+  <div class="flex flex-col flex-grow px-2">
+    <a
+      class="w-fit text-lg font-semibold hover:text-blue-500 appearance-none"
+      [routerLink]="['/issue', issue().number]"
+      (mouseenter)="prefetchIssue()"
+    >
+      {{ issue().title }}
+    </a>
+    <span class="text-gray-400">
+      #{{ issue().number }} opened #Date by
+      <span class="font-bold">{{ issue().user.login }}</span>
+    </span>
+    <div class="flex flex-wrap gap-2 mt-4">
+      @for (label of issue().labels; track label.id) {
+      <span
+        class="px-2 py-1 text-xs rounded-md"
+        [ngStyle]="{ border: '1px solid #' + label.color }"
+      >
+        {{ label.name }}
+      </span>
+
+      }
+    </div>
+  </div>
+
+  <img
+    [src]="issue().user.avatar_url"
+    width="32"
+    height="32"
+    alt="User Avatar"
+    class="w-8 h-8 rounded-full"
+  />
+
+  <div class="flex flex-col items-center ml-3">
+    <span
+      class="fa-regular fa-message text-gray-400 text-base"
+      aria-label="comments"
+    ></span>
+    <span class="text-gray-400 text-base leading-none">
+      {{ issue().comments }}
+    </span>
+  </div>
+</div>

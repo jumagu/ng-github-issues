@@ -1,0 +1,17 @@
+<ul
+  class="w-[130rem] lg:w-auto flex flex-wrap justify-center items-center gap-2"
+  role="none"
+>
+  @for (label of labels(); track label.id) {
+  <li class="flex-grow">
+    <button
+      class="w-full border p-2 rounded-md hover:bg-slate-950 appearance-none"
+      [ngStyle]="{ 'border-color': '#' + label.color }"
+      [class.selected-label]="isSelected(label.name)"
+      (click)="toggleLabelHandler(label.name)"
+    >
+      {{ label.name }}
+    </button>
+  </li>
+  }
+</ul>

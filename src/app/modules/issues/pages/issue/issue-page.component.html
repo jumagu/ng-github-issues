@@ -1,0 +1,28 @@
+<div class="flex justify-between">
+  <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold">
+    Issue
+    <span class="text-xl sm:text-2xl lg:text-3xl font-thin"
+      >#{{ issueNumber() }}</span
+    >
+  </h1>
+
+  <button type="button" class="btn" (click)="goBack()">Go Back</button>
+</div>
+
+@if (issueQuery.isLoading()) {
+<issue-comment-skeleton />
+} @else if (issueQuery.data()) {
+<issue-comment [issue]="issueQuery.data()!" />
+} @else {
+<span class="block text-lg" role="status">There are no data</span>
+}
+<!--  -->
+@if (issueCommentsQuery.isLoading()) {
+<issue-comment-skeleton />
+} @else if (issueCommentsQuery.data()) {<!--  -->
+@for (comment of issueCommentsQuery.data(); track comment.id) {
+<issue-comment [issue]="comment" />
+}<!--  -->
+} @else {
+<span class="block text-lg" role="status">Unexpected error</span>
+}

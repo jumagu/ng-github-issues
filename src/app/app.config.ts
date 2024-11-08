@@ -4,6 +4,7 @@ import {
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 
+import { provideMarkdown } from 'ngx-markdown';
 import {
   provideAngularQuery,
   QueryClient,
@@ -16,5 +17,6 @@ export const appConfig: ApplicationConfig = {
     provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     provideAngularQuery(new QueryClient()),
+    provideMarkdown(),
   ],
 };

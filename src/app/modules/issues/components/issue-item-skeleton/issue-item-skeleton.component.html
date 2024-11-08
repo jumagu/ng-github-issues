@@ -1,0 +1,22 @@
+<div class="flex items-center px-4 py-3 mb-5 border rounded-md">
+  <span class="fa-regular fa-folder-blank text-xl mr-2"></span>
+
+  <div class="flex flex-col flex-grow px-2">
+    <span class="w-9/12 h-6 mb-2 bg-gray-700 rounded-md animate-pulse"></span>
+    <span class="w-5/12 h-5 bg-gray-700 rounded-md animate-pulse"></span>
+    <div class="flex flex-wrap gap-2 mt-4">
+      @for (_ of labels; track $index) {
+      <span class="w-24 h-[26px] bg-gray-700 rounded-md animate-pulse"></span>
+      }
+    </div>
+  </div>
+
+  <div
+    class="w-8 h-8 flex-shrink-0 rounded-full bg-gray-700 animate-pulse"
+  ></div>
+
+  <div class="flex flex-col items-center ml-3">
+    <span class="fa-regular fa-message text-gray-400 text-base"></span>
+    <span class="bg-gray-700 w-2.5 h-3.5 rounded-md animate-pulse"></span>
+  </div>
+</div>

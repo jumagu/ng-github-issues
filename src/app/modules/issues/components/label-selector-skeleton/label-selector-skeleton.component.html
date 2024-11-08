@@ -1,0 +1,14 @@
+<div
+  role="status"
+  aria-busy="true"
+  aria-label="Loading labels..."
+  class="w-[135rem] lg:w-auto flex flex-wrap justify-center items-center gap-2"
+>
+  @for (item of items; track $index) {
+  <div
+    class="flex-grow p-2 bg-gray-700 rounded-md animate-pulse"
+    [ngStyle]="{ width: item + 'px', height: '42px' }"
+    aria-hidden="true"
+  ></div>
+  }
+</div>
