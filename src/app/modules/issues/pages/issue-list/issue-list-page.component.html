@@ -58,7 +58,9 @@
       <li>
         <issue-item [issue]="issue" />
       </li>
-      } @empty { }
+      } @empty {
+      <li role="status">There are no results for your search.</li>
+      }
     </ul>
     }
   </section>
