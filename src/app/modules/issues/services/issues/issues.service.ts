@@ -2,8 +2,8 @@ import { Injectable, signal } from '@angular/core';
 
 import { injectQuery } from '@tanstack/angular-query-experimental';
 
-import { State } from '../interfaces';
-import { getLabels, getIssues } from '../actions';
+import { State } from '../../interfaces';
+import { getLabels, getIssues } from '../../actions';
 
 @Injectable({
   providedIn: 'root',

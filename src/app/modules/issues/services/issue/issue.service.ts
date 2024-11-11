@@ -5,8 +5,8 @@ import {
   injectQueryClient,
 } from '@tanstack/angular-query-experimental';
 
-import { GithubIssue } from '../interfaces';
-import { getIssueComments, getIssueByNumber } from '../actions';
+import { GithubIssue } from '../../interfaces';
+import { getIssueComments, getIssueByNumber } from '../../actions';
 
 @Injectable({
   providedIn: 'root',
