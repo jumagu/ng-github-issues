@@ -14,12 +14,17 @@ export const getLabels = async (): Promise<GithubLabel[]> => {
       },
     });
 
-    if (!res.ok) throw new Error('');
+    if (!res.ok)
+      throw new Error('Something went wrong, please try again later');
 
     const labels: GithubLabel[] = await res.json();
 
     return labels;
   } catch (error) {
-    throw new Error('');
+    if (error instanceof Error) {
+      throw error;
+    } else {
+      throw new Error('An error occurred while fetching the issue labels.');
+    }
   }
 };

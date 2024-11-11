@@ -16,12 +16,17 @@ export const getIssueByNumber = async (
       },
     });
 
-    if (!res.ok) throw new Error('');
+    if (!res.ok)
+      throw new Error('Something went wrong, please try again later');
 
     const issue: GithubIssue = await res.json();
 
     return issue;
   } catch (error) {
-    throw new Error('');
+    if (error instanceof Error) {
+      throw error;
+    } else {
+      throw new Error('An error occurred while fetching the issue.');
+    }
   }
 };
