@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 
 import { State } from '../../interfaces';
-import { IssuesService } from '../../services/issues.service';
+import { IssuesService } from '../../services/issues/issues.service';
 import { IssueItemComponent } from '../../components/issue-item/issue-item.component';
 import LabelSelectorComponent from '../../components/label-selector/label-selector.component';
 import { IssueItemSkeletonComponent } from '../../components/issue-item-skeleton/issue-item-skeleton.component';

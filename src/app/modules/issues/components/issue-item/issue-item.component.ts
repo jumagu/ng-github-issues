@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { GithubIssue, State } from '../../interfaces';
-import { IssueService } from '../../services/issue.service';
+import { IssueService } from '../../services/issue/issue.service';
 
 @Component({
   selector: 'issue-item',

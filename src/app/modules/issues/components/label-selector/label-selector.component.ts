@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, input } from '@angular/core';
 
 import { GithubLabel } from '../../interfaces';
-import { IssuesService } from '../../services/issues.service';
+import { IssuesService } from '../../services/issues/issues.service';
 
 @Component({
   selector: 'issue-label-selector',

@@ -5,7 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 import { map, tap } from 'rxjs';
 
-import { IssueService } from '../../services/issue.service';
+import { IssueService } from '../../services/issue/issue.service';
 import { IssueCommentComponent } from '../../components/issue-comment/issue-comment.component';
 import { IssueCommentSkeletonComponent } from '../../components/issue-comment-skeleton/issue-comment-skeleton.component';
 
